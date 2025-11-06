@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocean Breeze - Booking</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0077be;
+      --secondary: #00a8cc;
+      --dark: #1a1a2e;
+      --light: #f0f8ff;
+      --white: #fff;
+      --accent: #ff6b35;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: var(--white);
+      padding: 1.5rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Booking Section */
+    .section {
+      padding: 7rem 0 5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 4rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background-color: lightblue;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: var(--dark);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+  background: var(--dark);
+  color: var(--white);
+  text-align: left;
+  padding: 3rem 0;
+  margin-top: 6rem;
+}
+
+footer p {
+  font-size: 1.1rem;
+}
+
+.footer-links {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+  margin: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header style="background-color: lightblue;">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">🦞 Ocean Breeze</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Booking</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="section container">
+    <h2 class="section-title">Book a Table</h2>
+    <p class="section-subtitle">Reserve your spot by the sea</p>
+    <form action="#" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" placeholder="Enter Name" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" placeholder="Enter Email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" placeholder="Enter Phone Number" id="phone" name="phone" required>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="time">Time</label>
+      <input type="time" id="time" name="time" required>
+
+      <label for="guests">Number of Guests</label>
+      <select id="guests" name="guests" required>
+        <option value="">Select</option>
+        <option value="1">1 Guest</option>
+        <option value="2">2 Guests</option>
+        <option value="3">3 Guests</option>
+        <option value="4">4 Guests</option>
+        <option value="5">5+ Guests</option>
+       
+      </select>
+
+      <label for="message">Special Requests (Optional)</label>
+      <textarea id="message" name="message" rows="4" "></textarea>
+
+      <button type="submit">Reserve Now</button>
+    </form>
+  </div>
+
+  <<footer>
+    <div class="container">
+    <div class="footer-links">
+        <a href="mailto:shubhamkokate1023@gmail.com" class="footer-link">E-mail</a><br>
+        <a href="tel:+9173083698197" class="footer-link">Contact us</a><br>
+        <p>Follow us on Social Media</p>
+        <img src="images/fb.png">
+        <img src="images/insta.png">
+        <img src="images/twit.png">
+       <p> &copy Occean Breeze all Rights Reserved. </p>
+       </div>
+    </div>
+    </footer>
+</body>
+</html>
